@@ -1,0 +1,29 @@
+version: 1.0
+project: ar-navigation
+services:
+  - name: ar-navigation-backend
+    source:
+      language: java
+      directory: ARIN3-Backend
+    docker:
+      dockerfile: Dockerfile
+      context: ARIN3-Backend
+    deploy:
+      resources:
+        memory: 512Mi
+      env:
+        - name: PORT
+          value: "8080"
+      healthCheck:
+        readinessProbe:
+          httpGet:
+            path: /api/coordinates
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
+        livenessProbe:
+          httpGet:
+            path: /api/coordinates
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 10
