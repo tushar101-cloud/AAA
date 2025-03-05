@@ -1,7 +1,6 @@
 schemaVersion: 1.0
-# Example endpoint configuration
 endpoints:
 - name: my-service-endpoint
   service:
-     port: 8080  # Replace <SERVICE_PORT> with the actual service port
+     port: 8080
   type: REST
