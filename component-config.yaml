@@ -1,0 +1,16 @@
+apiVersion: core.choreo.dev/v1beta1
+kind: ComponentConfig
+spec:
+  inbound:
+    - name: my-service-endpoint
+      port: 8080
+      type: REST
+      networkVisibility: Public
+      context: /api
+  outbound:
+    serviceReferences:
+      - name: choreo:///apifirst/mttm/mmvhxd/ad088/v1.0/PUBLIC
+        connectionConfig: <YOUR_CONNECTION_CONFIG_ID>
+        env:
+          - from: ServiceURL
+            to: SERVICE_URL
