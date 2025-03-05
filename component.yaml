@@ -1,9 +1,0 @@
-schemaVersion: 1.0
-build-context-path: <docker-context-path>/.choreo/component.yaml
-
-endpoints:
-- name: my-service-endpoint
-  service:
-     port: 8080
-  type: REST
-  # Additional configuration can be added here
