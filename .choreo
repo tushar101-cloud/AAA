@@ -1,1 +1,7 @@
 
+schemaVersion: 1.1
+endpoints:
+- name: my-service-endpoint
+  service:
+    port: 8080
+  type: REST
